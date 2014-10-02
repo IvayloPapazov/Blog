@@ -22,7 +22,7 @@ class PostType extends AbstractType
         $builder
             ->add('title', 'text', array('label' => 'post.form.label.title'))
             ->add('content', 'textarea', array('label' => 'post.form.label.content'))
-            ->add($builder->create('tags', 'text')->addModelTransformer($transformer))
+            ->add($builder->create('tags', 'text', array('label' => 'post.form.label.tags'))->addModelTransformer($transformer))
             ->add('file', 'file', array('label' => 'post.form.label.file'))
             ->add('Save', 'submit', array('label' => 'post.form.button.save'))
         ;
