@@ -62,6 +62,12 @@ user:
             button:
                 save: Запазване
 
+profile:
+    show:
+        username: Име
+        email: Email
+        edit: Промяна
+
 menu:
     home: Начало
     new: Нов пост
