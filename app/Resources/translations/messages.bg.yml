@@ -68,6 +68,15 @@ profile:
         email: Email
         edit: Промяна
 
+security:
+    login:
+        username: Име
+        password: Парола
+        forgot: Забравена парола?
+        register: Регистрация
+        remember_me: Запомни ме
+
+
 menu:
     home: Начало
     new: Нов пост

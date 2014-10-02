@@ -48,7 +48,7 @@ user:
                 login: Login
             link:
                 new: Register
-                forgot: Forgotten password?
+                forgot: Forgot password?
         account:
             label:
                 username: Username
@@ -68,6 +68,14 @@ profile:
         email: Email
         username: Username
         edit: Edit
+
+security:
+    login:
+        username: Username
+        password: Password
+        forgot: Forgot password?
+        register: Register
+        remember_me: Remember me
 
 menu:
     home: Home
