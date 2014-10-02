@@ -6,7 +6,7 @@ use Blog\CommentsBundle\Entity\Comment;
 use Blog\UserBundle\Entity\User;
 use Blog\PostBundle\Entity\Post;
 
-class CommentsTest extends \PHPUnit_Framework_TestCase
+class CommentTest extends \PHPUnit_Framework_TestCase
 {
     protected $comment;
 

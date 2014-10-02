@@ -12,7 +12,7 @@
               <argument>BlogUserBundle</argument>
           </call>
         </service>
-        
+
          <service id="sonata.admin.role" class="Blog\UserBundle\Admin\RoleAdmin">
           <tag name="sonata.admin" manager_type="orm" group="User" label="Role"/>
           <argument />

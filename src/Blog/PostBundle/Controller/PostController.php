@@ -6,12 +6,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Blog\PostBundle\Entity\Post;
 use Blog\CommentsBundle\Entity\Comment;
 use Blog\PostBundle\Form\PostType;
-use Blog\PostBundle\Entity\PostRepository;
 use Blog\CommentsBundle\Form\CommentsType;
 
 /**
@@ -28,7 +26,7 @@ class PostController extends Controller
     {
         $em = $this->get('doctrine.orm.entity_manager');
         $posts = $em->getRepository('BlogPostBundle:Post')->findAllOrderedByDate();
-        
+
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
             $posts,
@@ -55,13 +53,14 @@ class PostController extends Controller
         if (!$post) {
             throw $this->createNotFoundException('No post found');
         }
-        
+
         $comments = $this->getDoctrine()
             ->getRepository('BlogCommentsBundle:Comment')
             ->findByPost($id);
-    
+
         $comment = new Comment();
         $formComment = $this->createForm(new CommentsType(), $comment);
+
         return array(
             'post' => $post,
             'comments' => $comments,
@@ -85,7 +84,7 @@ class PostController extends Controller
                 'em' => $this->getDoctrine()->getManager()
             )
         );
-        
+
         $form->handleRequest($request);
 
            // var_dump($post);
@@ -95,7 +94,7 @@ class PostController extends Controller
             $em = $this->getDoctrine()->getManager();
 
             $post->setUser($this->getUser());
-            $em->persist($post);    
+            $em->persist($post);
             $em->flush();
 
             return $this->redirect($this->generateUrl('show_posts'));

@@ -44,7 +44,7 @@ class DatabaseWeb extends WebTestCase
                 }
             )
         );
-               
+
         $this->factory->defineEntity('Blog\PostBundle\Entity\Tag', array(
             'name' => 'Tag'
         ));
