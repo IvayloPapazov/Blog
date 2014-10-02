@@ -5,14 +5,13 @@ namespace Blog\PostBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use Blog\PostBundle\Form\TagsType;
 use Blog\PostBundle\Form\DataTransformer\TagsTransformer;
 
 class PostType extends AbstractType
 {
         /**
      * @param FormBuilderInterface $builder
-     * @param array $options
+     * @param array                $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -27,7 +26,7 @@ class PostType extends AbstractType
             ->add('Save', 'submit', array('label' => 'post.form.button.save'))
         ;
     }
-    
+
     /**
      * @param OptionsResolverInterface $resolver
      */

@@ -3,7 +3,6 @@
 namespace Blog\CommentsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
@@ -73,7 +72,7 @@ class Comment
     /**
      * Set content
      *
-     * @param string $content
+     * @param  string   $content
      * @return Comments
      */
     public function setContent($content)
@@ -106,7 +105,7 @@ class Comment
     /**
      * Set date
      *
-     * @param \DateTime $date
+     * @param  \DateTime $date
      * @return Comment
      */
     public function setDate($date)
@@ -119,7 +118,7 @@ class Comment
     /**
      * Add post
      *
-     * @param \Blog\PostBundle\Entity\Post $post
+     * @param  \Blog\PostBundle\Entity\Post $post
      * @return Comment
      */
     public function setPost(\Blog\PostBundle\Entity\Post $post)
@@ -142,7 +141,7 @@ class Comment
     /**
      * Add user
      *
-     * @param \Blog\UserBundle\Entity\User $user
+     * @param  \Blog\UserBundle\Entity\User $user
      * @return User
      */
     public function setUser(\Blog\UserBundle\Entity\User $user)

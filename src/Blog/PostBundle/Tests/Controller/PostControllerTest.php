@@ -9,11 +9,11 @@ class PostControllerTest extends DatabaseWeb
 {
     private $client = null;
     protected $user;
-    
+
     public function setUp()
     {
         $this->client = static::createClient();
-        
+
         parent::setUp();
 
         $this->factory->persistOnGet();
@@ -87,7 +87,7 @@ class PostControllerTest extends DatabaseWeb
             302,
             $this->client->getResponse()->getStatusCode()
         );
-        
+
         $this->assertTrue(
             $this->client->getResponse()->isRedirect('/en/posts/list')
         );
@@ -97,7 +97,7 @@ class PostControllerTest extends DatabaseWeb
     {
         $this->loginAs($this->client, $this->user);
         $this->client->request('GET', '/en/posts/list/tag/1/1');
-      
+
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
     }
 }

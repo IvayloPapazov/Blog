@@ -10,16 +10,16 @@ class GroupTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-    	$group = $this->getMockBuilder('Sonata\UserBundle\Document')
-			->disableOriginalConstructor()
-			->getMock()
-		;
+        $group = $this->getMockBuilder('Sonata\UserBundle\Document')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
 
         $this->group = new Group($group);
     }
 
     public function testId()
     {
-        
+
     }
 }

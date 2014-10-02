@@ -62,7 +62,7 @@ class UserController extends Controller
     //         ->findOneByName('user');
 
     //     if ($form->isValid()) {
-            
+
     //         $encoder = $factory->getEncoder($user);
     //         $password = $encoder->encodePassword(
     //             $user->getPassword(),
@@ -71,7 +71,7 @@ class UserController extends Controller
     //         $user->setPassword($password);
     //         $user->addRole($role);
     //         $user->setImageName($user->getUsername());
-            
+
     //         $em = $this->getDoctrine()->getManager();
     //         $em->persist($user);
     //         $em->flush();
@@ -79,7 +79,7 @@ class UserController extends Controller
     //         return $this->redirect($this->generateUrl('login'));
 
     //     }
-        
+
     //     return array('form' => $form->createView());
     // }
 
@@ -99,7 +99,7 @@ class UserController extends Controller
     //     $form->handleRequest($request);
 
     //     if ($form->isValid()) {
-            
+
     //         $encoder = $factory->getEncoder($user);
     //         $password = $encoder->encodePassword(
     //             $user->getPassword(),
@@ -108,7 +108,7 @@ class UserController extends Controller
     //         $user->setImageName($user->getUsername());
     //         $user->setPassword($password);
     //         $this->getDoctrine()->getManager()->flush($user);
-            
+
     //         return $this->redirect($this->generateUrl('show_posts'));
     //     }
 
