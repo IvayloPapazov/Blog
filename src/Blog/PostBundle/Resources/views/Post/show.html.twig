@@ -1,0 +1,62 @@
+{% form_theme formComment with '::form_layout.html.twig' %}
+{% extends '::base.html.twig' %}
+{% block body %}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <b>{{ post.title }}</b>
+        <span class="pull-right">
+            <b>{{ post.date|date("d/m/Y H:i") }}</b>
+        </span>
+    </div>
+    <div class="panel-body">
+        <div class="panel panel-warning">
+            <div class="panel-body">
+                <img src="{{ vich_uploader_asset(post, 'product_image') }}" 
+                    alt="{{ post.imageName }}"  
+                    class="pull-right"
+                />
+
+                {{ post.content }}
+            </div>
+        </div>
+        <p>
+            <small>
+                <div class="well well-sm">
+                    <span class="glyphicon glyphicon-tags"></span> 
+                    {{'post.list.tags'|trans}} 
+                    {% for tag in post.tags %}
+                        <a href="{{ path('tag_post', {'tagId': tag.id}) }}">{{ tag.name }}</a>
+                        {% if not loop.last %} 
+                            ,
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </small>
+        </p>
+        {% for comment in comments %}
+            <table class="table table-striped">
+                <td class="col-md-4">
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            {% set runtimeConfig = {"thumbnail": {"size": [64, 64] }} %}
+                            <img class="media-object" 
+                                src="{{ vich_uploader_asset(comment.user, 'product_image')|imagine_filter('my_thumb', runtimeConfig) }}"/>
+                        </a>
+                        <div class="media-body">
+                            <h5 class="media-heading">
+                                <i><b>{{ comment.user }}</b></i>
+                            </h5>
+                            <small>{{ comment.content }}</small>
+                        </div>
+                    </div>
+                </td>           
+            </table>
+        {% endfor %}
+        {{ form(formComment, {'action': path('create_comment', {'id': post.id}), method: 'POST'}) }}
+    </div>
+</div>
+ {% if is_granted('VIEW') %}
+    <p>Hello there!</p>
+{% endif %}
+{% endblock %} 

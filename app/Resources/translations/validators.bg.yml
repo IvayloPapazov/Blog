@@ -1,0 +1,21 @@
+post:
+    title:
+        minLength: Вашето заглавие трябва да е по-дълго от {{ limit }} символа
+        maxLength: Вашето заглавие трябва да е по-късо от {{ limit }} символа
+    content: 
+        message: Вашето съдържание трябва да е по-дълго от {{ limit }} символа
+
+user:
+    username:
+        minLength: Вашето име трябва да е по-дълго от {{ limit }} символа
+        maxLength: Вашето име трябва да е по-късо от {{ limit }} символа
+    password:
+        minLength: Вашата парола трябва да е по-дългa от {{ limit }} символа
+        maxLength: Вашата парола трябва да е по-късa от {{ limit }} символа
+    email: 
+        message: Невалидент email: {{ value }}
+
+comment:
+    name: 
+        minLength: Вашето име трябва да е по-дълго от {{ limit }} символа
+        maxLength: Вашето име трябва да е по-късо от {{ limit }} символа

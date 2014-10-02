@@ -1,0 +1,37 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+
+        <service id="sonata.admin.post" class="Blog\CommentsBundle\Admin\CommentAdmin">
+          <tag name="sonata.admin" manager_type="orm" group="Post" label="Commetn"/>
+          <argument />
+          <argument>Blog\CommentsBundle\Entity\Comment</argument>
+          <argument />
+          <call method="addChild">
+              <argument type="service" id="sonata.news.admin.comment" />
+          </call>
+        </service>
+
+        <service id="sonata.admin.post" class="Blog\PostBundle\Admin\PostAdmin">
+          <tag name="sonata.admin" manager_type="orm" group="Post" label="Post"/>
+          <argument />
+          <argument>Blog\PostBundle\Entity\Post</argument>
+          <argument />
+          <call method="setTranslationDomain">
+              <argument>BlogPostBundle</argument>
+          </call>
+        </service>
+        
+        <service id="sonata.admin.tag" class="Blog\PostBundle\Admin\TagAdmin">
+          <tag name="sonata.admin" manager_type="orm" group="Post" label="Tags"/>
+          <argument />
+          <argument>Blog\PostBundle\Entity\Tag</argument>
+          <argument />
+          <call method="setTranslationDomain">
+              <argument>BlogPostBundle</argument>
+          </call>
+        </service>
+
+   </services>
+</container>

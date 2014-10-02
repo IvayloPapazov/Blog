@@ -1,0 +1,27 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+
+<!--         <service id="sonata.admin.user" class="Blog\UserBundle\Admin\UserAdmin">
+          <tag name="sonata.admin" manager_type="orm" group="User" label="User"/>
+          <argument />
+          <argument>Blog\UserBundle\Entity\User</argument>
+          <argument />
+          <call method="setTranslationDomain">
+              <argument>BlogUserBundle</argument>
+          </call>
+        </service>
+        
+         <service id="sonata.admin.role" class="Blog\UserBundle\Admin\RoleAdmin">
+          <tag name="sonata.admin" manager_type="orm" group="User" label="Role"/>
+          <argument />
+          <argument>Blog\UserBundle\Entity\Role</argument>
+          <argument />
+          <call method="setTranslationDomain">
+              <argument>BlogUserBundle</argument>
+          </call>
+        </service> -->
+
+   </services>
+</container>

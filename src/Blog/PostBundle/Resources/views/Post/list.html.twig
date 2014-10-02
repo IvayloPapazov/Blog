@@ -1,0 +1,46 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+
+{% for article in pagination %}
+
+<tr {% if loop.index is odd %}class="color"{% endif %}>
+   <div class="panel panel-default">
+		<div class="panel-heading">
+			<a href="{{ path('show_post', {'id': article.id}) }}">
+				<b>{{ article.title }}</b>
+			</a>
+			<span class="pull-right">{{ article.date|date("d/m/Y H:i") }}</span>
+		</div>
+		<div class="panel-body">
+			<span class="pull-right">
+					<img src="{{ vich_uploader_asset(article, 'product_image') }}" alt="{{ article.imageName }}" class="pull-right thumbnail"/>
+			</span>
+			{{ article.content }}
+		</div>
+		<div class="panel-footer"><span class="glyphicon glyphicon-tags"></span>
+			<small>
+                {{'post.list.tags'|trans}}
+				
+                {% for tag in article.tags %}
+                    <a href="{{ path('tag_post', {'tagId': tag.id}) }}">{{ tag.name }}</a>
+                    {% if not loop.last %} 
+                    ,
+                    {% endif %}
+                {% endfor %}
+				<span class="pull-right"><span class="glyphicon glyphicon-comment"></span>
+					{{ 'post.list.comments'|trans }}
+					<a href="{{ path('show_post', {'id': article.id}) }}"> 
+					{{ article.commentsCount}}
+					</a>
+				</span>
+			</small>
+		</div>
+	</div>
+{% endfor %}
+<div class="col-md-offset-5">
+    <div class="navigation">
+    {{ knp_pagination_render(pagination) }}
+    </div>
+</div>
+
+{% endblock %}

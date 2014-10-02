@@ -1,0 +1,21 @@
+{% form_theme form with '::form_layout.html.twig' %}
+{% extends '::base.html.twig' %}
+{% block body %}
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading"><b>{{'post.form.label.new'|trans}}</b>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                      {{ form(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

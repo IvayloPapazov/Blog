@@ -1,0 +1,20 @@
+post:
+    title:
+        minLength: Your title must be at least {{ limit }} characters length
+        maxLength: Your title cannot be longer than {{ limit }} characters length
+        content: Your content must be at least {{ limit }} characters length
+
+user:
+    username:
+        minLength: Your username must be at least {{ limit }} characters length
+        maxLength: Your username cannot be longer than {{ limit }} characters length
+    password:
+        minLength: Your password must be at least {{ limit }} characters length
+        maxLength: Your password cannot be longer than {{ limit }} characters length
+    email: 
+        message: The email {{ value }} is not a valid email.
+
+comment:
+    name:
+        minLength: Your name must be at least {{ limit }} characters length
+        maxLength: Your name cannot be longer than {{ limit }} characters length

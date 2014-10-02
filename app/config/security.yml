@@ -1,0 +1,28 @@
+security:
+    encoders:
+        FOS\UserBundle\Model\UserInterface:
+            algorithm: md5
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: [ ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH ]
+    providers:
+        administrators:
+            entity: { class: BlogUserBundle:User }
+        fos_userbundle:
+            id: fos_user.user_provider.username
+    firewalls:
+        main:
+            pattern:    ^/
+            anonymous: ~
+            form_login:
+                provider:      fos_userbundle
+                csrf_provider: form.csrf_provider
+                default_target_path: show_posts
+            logout:    
+                target: show_posts
+            anonymous: true
+    access_control:
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: "^/[a-z]{2}/posts/create", roles: ROLE_USER }
+        # - { path: "^/[a-z]{2}/admin", roles: ROLE_ADMIN}
+        - { path: ^/admin, roles: ROLE_ADMIN }

@@ -1,0 +1,74 @@
+
+post:
+    form:
+        label:
+            title: Заглавие
+            content: Съдържание
+            tags: Тагове
+            file: Файл
+            new: Създаване на нов пост
+        placeholder:
+            title: Заглавие
+            content: Съдържание
+            tags: Тагове
+        button:
+            save: Запазване
+            back: Назад
+        admin:
+            button:
+                delete: Изтриване
+                edit: Промяна
+            label_form:
+                edit: Промяна: %title%
+    list:
+        tags: Тагове:
+        comments: Коментари:
+
+comments:
+    form:
+        label:
+            name: Име
+            content: Коментар
+        placeholder:
+            name: Име
+            content: Съдържание
+        button:
+            save: Запазване
+
+user:
+    form:
+        login:
+            label:
+                username: Име
+                password: Парола
+            placeholder:
+                username: Име
+                password: Парола
+            button:
+                login: Вход
+            link:
+                new: Нов потребител
+        account:
+            label:
+                username: Име
+                password: Парола
+                email: Email
+                firstName: Име
+                lastName: Фамилиея
+            placeholder:
+                username: Име
+                password: Парола
+                email: Email
+            button:
+                save: Запазване
+
+menu:
+    home: Начало
+    new: Нов пост
+    login: Вход
+    logout: Изход
+    myProfile: Моят профил
+    myPost: Моите постове
+    adminDashboard: Admin Dashboard
+    userDashboard: User Dashboar
+

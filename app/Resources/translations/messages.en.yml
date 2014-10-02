@@ -1,0 +1,74 @@
+
+post:
+    form:
+        label:
+            title: Title
+            content: Content
+            tags: Tags
+            file: File
+            new: Create new post
+        placeholder:
+            title: Title
+            content: Content
+            tags: Tags
+        button:
+            save: Save
+            back: Back
+        admin:
+            button:
+                delete: Delete
+                edit: Edit
+            label_form:
+                edit: Edit: %title%
+    list:
+        tags: Tags:
+        comments: Comments:
+
+comments:
+    form:
+        label:
+            name: Name
+            content: Comment
+        placeholder:
+            name: Name
+            content: Content
+        button:
+            save: Save
+
+user:
+    form:
+        login:
+            label:
+                username: Username
+                password: Password
+            placeholder:
+                username: Username
+                password: Password
+            button:
+                login: Login
+            link:
+                new: Register
+                forgot: Forgotten password?
+        account:
+            label:
+                username: Username
+                password: Password
+                email: Email
+                firstName: First Name
+                lastName: Last Name
+            placeholder:
+                username: Username
+                password: Password
+                email: Email
+            button:
+                save: Save
+
+menu:
+    home: Home
+    new: New post
+    login: Login
+    logout: Logout
+    myProfile: My profile
+    myPost: My post
+    adminDashboard: Admin Dashboard
+    userDashboard: User Dashboard
