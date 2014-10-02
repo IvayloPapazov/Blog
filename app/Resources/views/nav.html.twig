@@ -86,22 +86,25 @@
                         </div>
                         <div class="panel-body">
                             <div class="media">
-                                {% set runtimeConfig = {"thumbnail": {"size": [70, 70] }} %}
-                                <a class="pull-left" href="#">
-                                   <img class="media-object" 
-                                        src="{{ vich_uploader_asset(
-                                            app.user,
-                                            'product_image'
-                                        )|imagine_filter(
-                                            'my_thumb',
-                                            runtimeConfig
-                                        ) }}"
-                                    />
-                                </a>
-                                <div class="media-body">
-                                    <p>{{ 'profile.show.username'|trans }}: {{ app.user.username }}</p>
-                                    <p>{{ 'profile.show.email'|trans }}: {{ app.user.email }}</p>
-                                    <h6 class="pull-right"><a href="{{ path('fos_user_profile_edit') }}">{{'profile.show.edit'|trans}}</a></h6>
+                            {% set runtimeConfig = {"thumbnail": {"size": [64, 64] }} %}
+                            <a class="pull-left" href="#">
+                               <img class="media-object" 
+                                    src="{{ vich_uploader_asset(
+                                        app.user,
+                                        'product_image'
+                                    )|imagine_filter(
+                                        'my_thumb',
+                                        runtimeConfig
+                                    ) }}"
+                                />
+                            </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">
+                                    <p class="text-center">
+                                        <i>{{app.user.username}}</i><br>
+                                    </p>
+                                </h4>
+                                <p class="text-center">{{ app.user.email }}</p>
                                 </div>
                             </div>
                         </div>
