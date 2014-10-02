@@ -12,8 +12,8 @@
     <div class="panel-body">
         <div class="panel panel-warning">
             <div class="panel-body">
-                <img src="{{ vich_uploader_asset(post, 'product_image') }}" 
-                    alt="{{ post.imageName }}"  
+                <img src="{{ vich_uploader_asset(post, 'product_image') }}"
+                    alt="{{ post.imageName }}"
                     class="pull-right"
                 />
 
@@ -23,11 +23,11 @@
         <p>
             <small>
                 <div class="well well-sm">
-                    <span class="glyphicon glyphicon-tags"></span> 
-                    {{'post.list.tags'|trans}} 
+                    <span class="glyphicon glyphicon-tags"></span>
+                    {{'post.list.tags'|trans}}
                     {% for tag in post.tags %}
                         <a href="{{ path('tag_post', {'tagId': tag.id}) }}">{{ tag.name }}</a>
-                        {% if not loop.last %} 
+                        {% if not loop.last %}
                             ,
                         {% endif %}
                     {% endfor %}
@@ -40,7 +40,7 @@
                     <div class="media">
                         <a class="pull-left" href="#">
                             {% set runtimeConfig = {"thumbnail": {"size": [64, 64] }} %}
-                            <img class="media-object" 
+                            <img class="media-object"
                                 src="{{ vich_uploader_asset(comment.user, 'product_image')|imagine_filter('my_thumb', runtimeConfig) }}"/>
                         </a>
                         <div class="media-body">
@@ -50,7 +50,7 @@
                             <small>{{ comment.content }}</small>
                         </div>
                     </div>
-                </td>           
+                </td>
             </table>
         {% endfor %}
         {{ form(formComment, {'action': path('create_comment', {'id': post.id}), method: 'POST'}) }}
@@ -59,4 +59,4 @@
  {% if is_granted('VIEW') %}
     <p>Hello there!</p>
 {% endif %}
-{% endblock %} 
+{% endblock %}
