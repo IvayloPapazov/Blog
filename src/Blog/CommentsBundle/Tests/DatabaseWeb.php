@@ -53,6 +53,7 @@ class DatabaseWeb extends WebTestCase
             'commentsCount' => 0
         ));
 
+
         $this->factory->defineEntity('Blog\CommentsBundle\Entity\Comment', array(
             'user' => FieldDef::reference('Blog\UserBundle\Entity\User'),
             'post' => FieldDef::reference('Blog\PostBundle\Entity\Post'),

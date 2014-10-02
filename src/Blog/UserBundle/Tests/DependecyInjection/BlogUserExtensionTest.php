@@ -5,7 +5,7 @@ namespace Blog\UserBundle\Test\DependencyInjection;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
 use Blog\UserBundle\DependencyInjection\BlogUserExtension;
 
-class BlogUserExtensionTest extends AbstractExtensionTestCase
+class BlogPostExtensionTest extends AbstractExtensionTestCase
 {
     protected function getContainerExtensions()
     {

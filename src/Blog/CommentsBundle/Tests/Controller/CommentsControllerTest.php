@@ -39,7 +39,7 @@ class CommentsControllerTest extends DatabaseWeb
             '/en/posts/post/1'
         );
         $form = $crawler->selectButton('comment[Save]')->form(array(
-
+            
             'comment[content]' => 'Content'
         ));
 

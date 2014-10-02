@@ -12,6 +12,6 @@
               <argument>BlogCommentsBundle</argument>
           </call>
         </service>
-
+      
    </services>
 </container>

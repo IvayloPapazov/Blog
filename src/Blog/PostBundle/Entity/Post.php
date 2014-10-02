@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
@@ -79,7 +80,7 @@ class Post
      * @Assert\Type(type="integer", message="The value {{ value }} is not a valid {{ type }}.")
      */
     private $commentsCount;
-
+   
     /**
      * @Vich\UploadableField(mapping="product_image", fileNameProperty="imageName")
      * @var File $file
@@ -149,7 +150,7 @@ class Post
     /**
      * Add comment
      *
-     * @param  \Blog\CommentsBundle\Entity\Comment $comment
+     * @param \Blog\CommentsBundle\Entity\Comment $comment
      * @return Post
      */
     public function addComment(\Blog\CommentsBundle\Entity\Comment $comments)
@@ -172,7 +173,7 @@ class Post
     /**
      * Add tags
      *
-     * @param  \Blog\PostBundle\Entity\Tags $tags
+     * @param \Blog\PostBundle\Entity\Tags $tags
      * @return Post
      */
     public function addTag(\Blog\PostBundle\Entity\Tag $tags)
@@ -190,7 +191,7 @@ class Post
     /**
      * Set tag
      *
-     * @param  string $tag
+     * @param string $tag
      * @return Post
      */
     public function setTags(ArrayCollection $tags)
@@ -203,7 +204,7 @@ class Post
     /**
      * Set title
      *
-     * @param  string $title
+     * @param string $title
      * @return Post
      */
     public function setTitle($title)
@@ -226,7 +227,7 @@ class Post
     /**
      * Set content
      *
-     * @param  string $content
+     * @param string $content
      * @return Post
      */
     public function setContent($content)
@@ -249,7 +250,7 @@ class Post
     /**
      * Set commentsCount
      *
-     * @param  integer $commentsCount
+     * @param integer $commentsCount
      * @return Post
      */
     public function setCommentsCount($commentsCount)
@@ -272,7 +273,7 @@ class Post
     /**
      * Set date
      *
-     * @param  \DateTime $date
+     * @param \DateTime $date
      * @return Post
      */
     public function setDate($date)

@@ -4,6 +4,7 @@ namespace Blog\CommentsBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Blog\CommentsBundle\Entity\Comment;
 use Symfony\Component\HttpFoundation\Request;
@@ -33,7 +34,7 @@ class CommentsController extends Controller
 
         $form = $this->createForm(new CommentsType(), $comment);
         $form->handleRequest($request);
-
+        
         if ($form->isValid()) {
             $comment->setUser($this->getUser());
             $comment->setPost($post);

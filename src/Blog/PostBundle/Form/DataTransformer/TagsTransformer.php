@@ -3,8 +3,10 @@
 namespace Blog\PostBundle\Form\DataTransformer;
 
 use Symfony\Component\Form\DataTransformerInterface;
+use Symfony\Component\Form\Exception\TransformationFailedException;
 use Doctrine\Common\Persistence\ObjectManager;
 use Blog\PostBundle\Entity\Tag;
+use Blog\PostBundle\Entity\Post;
 use Doctrine\Common\Collections\ArrayCollection;
 
 class TagsTransformer implements DataTransformerInterface
@@ -26,7 +28,7 @@ class TagsTransformer implements DataTransformerInterface
         foreach ($tags as $tag) {
             $tagsString = $tag->getName();
         }
-
+        
         return $tagsString;
     }
 

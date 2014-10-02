@@ -63,12 +63,6 @@ user:
             button:
                 save: Save
 
-profile:
-    show:
-        username: Username
-        email: Email
-        edit: Edit
-
 menu:
     home: Home
     new: New post

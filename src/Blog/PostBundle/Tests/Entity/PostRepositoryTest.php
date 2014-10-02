@@ -3,6 +3,7 @@
 namespace Blog\PostBundle\Tests\Entity;
 
 use Blog\PostBundle\Tests\DatabaseWeb;
+use Blog\PostBundle\Entity\PostRepository;
 use Blog\PostBundle\Entity\Post;
 
 class PostRepositoryTest extends DatabaseWeb
@@ -18,7 +19,7 @@ class PostRepositoryTest extends DatabaseWeb
         $post = $this->factory->get('Blog\PostBundle\Entity\Post');
 
         $post->addTag($tag);
-
+        
         $this->em->flush();
     }
 

@@ -20,16 +20,16 @@
 		<div class="panel-footer"><span class="glyphicon glyphicon-tags"></span>
 			<small>
                 {{'post.list.tags'|trans}}
-
+				
                 {% for tag in article.tags %}
                     <a href="{{ path('tag_post', {'tagId': tag.id}) }}">{{ tag.name }}</a>
-                    {% if not loop.last %}
+                    {% if not loop.last %} 
                     ,
                     {% endif %}
                 {% endfor %}
 				<span class="pull-right"><span class="glyphicon glyphicon-comment"></span>
 					{{ 'post.list.comments'|trans }}
-					<a href="{{ path('show_post', {'id': article.id}) }}">
+					<a href="{{ path('show_post', {'id': article.id}) }}"> 
 					{{ article.commentsCount}}
 					</a>
 				</span>

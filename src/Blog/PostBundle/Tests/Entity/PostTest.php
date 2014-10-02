@@ -6,6 +6,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Blog\PostBundle\Entity\Post;
 use Blog\PostBundle\Entity\Tag;
 use Blog\UserBundle\Entity\User;
+use Blog\UserBundle\Entity\Role;
 use Blog\CommentsBundle\Entity\Comment;
 use Doctrine\Common\Collections\ArrayCollection;
 

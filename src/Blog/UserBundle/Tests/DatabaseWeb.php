@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\BrowserKit\Cookie;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use FactoryGirl\Provider\Doctrine\FixtureFactory;
+use FactoryGirl\Provider\Doctrine\FieldDef;
 use Doctrine\ORM\Tools\SchemaTool;
 
 class DatabaseWeb extends WebTestCase
