@@ -136,8 +136,6 @@ class PostController extends Controller
      */
     public function userPostListAction($page)
     {
-        // var_dump($this->getUser());
-        // exit;
         $em = $this->get('doctrine.orm.entity_manager');
         $posts = $em
             ->getRepository('BlogPostBundle:Post')
@@ -162,14 +160,23 @@ class PostController extends Controller
      */
     public function userCommentsListAction($page)
     {
+        $em = $this->get('doctrine.orm.entity_manager');
+        $posts = $em
+            ->getRepository('BlogPostBundle:Post')
+            ->findAll();
+
+        $comments = $em
+            ->getRepository('BlogCommentsBundle:Comment')
+            ->findByUser($this->getUser()->getId());
 
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
-            $posts,
+            $comments,
             $this->get('request')->query->get(
                 'page',
                 $page
-            )
+            ),
+            10
         );
 
         return array('pagination' => $pagination);
