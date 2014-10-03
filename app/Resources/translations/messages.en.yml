@@ -62,6 +62,9 @@ user:
                 email: Email
             button:
                 save: Save
+    show:
+        my_posts: My posts
+        my_comments: My comments
 
 profile:
     show:
