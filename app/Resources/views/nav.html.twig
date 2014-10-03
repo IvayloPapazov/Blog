@@ -101,7 +101,11 @@
                                 <div class="media-body">
                                     <p>{{ 'profile.show.username'|trans }}: {{ app.user.username }}</p>
                                     <p>{{ 'profile.show.email'|trans }}: {{ app.user.email }}</p>
-                                    <h6 class='pull-right'><a href="{{ path('fos_user_profile_edit') }}">{{'profile.show.edit'|trans}}</a></h6>
+                                    <h6 class='pull-right'>
+                                        <a href="{{ path('fos_user_profile_edit') }}">
+                                            {{'profile.show.edit'|trans}}
+                                        </a>
+                                    </h6>
                                 </div>
                             </div>
                         </div>
