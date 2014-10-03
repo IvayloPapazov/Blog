@@ -12,12 +12,11 @@
     <div class="panel-body">
         <div class="panel panel-warning">
             <div class="panel-body">
-                 {% set runtimeConfig = {"thumbnail": {"size": [220, 220] }} %}
+                {% set runtimeConfig = {"thumbnail": {"size": [220, 220] }} %}
                 <img src="{{ vich_uploader_asset(post, 'product_image')|imagine_filter('my_thumb', runtimeConfig) }}" 
                     alt="{{ post.imageName }}"  
-                    class="pull-right"
+                    class="pull-left"
                 />
-
                 {{ post.content }}
             </div>
         </div>
