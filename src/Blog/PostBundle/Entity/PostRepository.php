@@ -36,4 +36,19 @@ class PostRepository extends EntityRepository
 
         return $posts;
     }
+
+    public function findAllCommentsUser($user)
+    {
+        $post = $this
+            ->createQueryBuilder('p')
+            ->select('p, c')
+            ->leftJoin('p.posts_id', 'c')
+            ->where('c.user_id = :user')
+            ->setParameter('user', $user)
+            ->getQuery();
+
+        var_dump($post);
+        exit;
+        return $post;
+    }
 }
