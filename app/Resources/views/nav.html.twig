@@ -37,6 +37,9 @@
                 app.request.get('_route_params')|merge({'_locale': 'en' })) }}">EN
             </a>
         </li>
+          <li><a href="{{ path('fos_user_changePassword_changePassword') }}">
+                        <span class="glyphicon glyphicon-off"></span> {{'menu.logout'|trans}} </a>
+                    </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
          <li>
