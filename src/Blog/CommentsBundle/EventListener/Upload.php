@@ -22,8 +22,8 @@ class Upload implements EventSubscriber
 
         if ($entity instanceof Comment) {
 
-            $post = $entity->getPost();
-            $post->setCommentsCount($post->getCommentsCount()-1);
+            $user = $entity->getUser();
+            $user->setCommentsCount($user->getCommentsCount()-1);
         }
     }
 
@@ -31,9 +31,9 @@ class Upload implements EventSubscriber
     {
         $entity = $args->getEntity();
         if ($entity instanceof Comment) {
-
-            $post = $entity->getPost();
-            $post->setCommentsCount($post->getCommentsCount()+1);
+            
+            $user = $entity->getUser();
+            $user->setCommentsCount($user->getCommentsCount()+1);
         }
     }
 }
