@@ -18,10 +18,10 @@
     </services>
     -->
 
-    <!-- <services>
-        <service id="my.listenerPost" class="Blog\PostBundle\EventListener\Upload">
+    <services>
+        <service id="my.listenerPost" class="Blog\PostBundle\EventListener\UserPostCount">
                 <tag name="doctrine.event_subscriber" connection="default" />
         </service>
-    </services> -->
+    </services>
 
 </container>

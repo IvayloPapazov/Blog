@@ -36,10 +36,22 @@ class User extends BaseUser
      */
     protected $imageName;
 
+    /**
+     * @ORM\Column(type="string", length=255, name="postCount")
+     */
+    protected $postCount;
+
+    /**
+     * @ORM\Column(type="string", length=255, name="commentsCount")
+     */
+    protected $commentsCount;
+
     public function __construct()
     {
         parent::__construct();
         $this->imageName = 'name';
+        $this->postCount = 0;
+        $thsi->commentsCount = 0;
         // your own logic
     }
 
@@ -83,5 +95,25 @@ class User extends BaseUser
     public function getFile()
     {
         return $this->file;
+    }
+
+    public function setPostCount($postCount)
+    {
+        $this->postCount = $postCount;
+    }
+
+    public function getPostCount()
+    {
+        return $this->postCount;
+    }
+
+    public function setCommentsCount($commentsCount)
+    {
+        $this->commentsCount = $commentsCount;
+    }
+
+    public function getCommentsCount()
+    {
+        return $this->commentsCount;
     }
 }
