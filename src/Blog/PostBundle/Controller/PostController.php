@@ -162,6 +162,16 @@ class PostController extends Controller
      */
     public function userCommentsListAction($page)
     {
-       
+
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $posts,
+            $this->get('request')->query->get(
+                'page',
+                $page
+            )
+        );
+
+        return array('pagination' => $pagination);
     }
 }
