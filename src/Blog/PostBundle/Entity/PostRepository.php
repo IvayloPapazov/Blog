@@ -37,7 +37,7 @@ class PostRepository extends EntityRepository
         return $posts;
     }
 
-    public function findAllCommentsUser($user)
+    public function CommentRepository($user)
     {
         $post = $this
             ->createQueryBuilder('p')
