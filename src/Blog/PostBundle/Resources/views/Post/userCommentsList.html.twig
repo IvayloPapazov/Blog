@@ -1,0 +1,31 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+
+<table>
+
+{% for article in pagination %}
+<tr {% if loop.index is odd %}class="color"{% endif %}>
+    <td><small>{{ article.date|date("d/m/Y H:i") }}</small></td>
+</tr>
+<tr>
+    <td>
+        <blockquote>
+            <p>{{ article.content }}</p>
+            <p>
+                <a href='{{ path('show_post', {'id': article.post.id}) }}'>
+                    <h6>View post</h6>
+                </a>
+            </p>
+        </blockquote>
+    </td>
+</tr>
+{% endfor %}
+</table>
+     
+<div class="col-md-offset-5">
+    <div class="navigation">
+    {{ knp_pagination_render(pagination) }}
+    </div>
+</div>
+
+{% endblock %}

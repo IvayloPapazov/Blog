@@ -161,10 +161,6 @@ class PostController extends Controller
     public function userCommentsListAction($page)
     {
         $em = $this->get('doctrine.orm.entity_manager');
-        $posts = $em
-            ->getRepository('BlogPostBundle:Post')
-            ->findAll();
-
         $comments = $em
             ->getRepository('BlogCommentsBundle:Comment')
             ->findByUser($this->getUser()->getId());
