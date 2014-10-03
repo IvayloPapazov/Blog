@@ -12,8 +12,13 @@
 			<span class="pull-right">{{ article.date|date("d/m/Y H:i") }}</span>
 		</div>
 		<div class="panel-body">
-			<span class="pull-right">
-					<img src="{{ vich_uploader_asset(article, 'product_image') }}" alt="{{ article.imageName }}" class="pull-right thumbnail"/>
+			<span class="pull-left">
+                    {% set runtimeConfig = {"thumbnail": {"size": [220, 220] }} %}
+					<img 
+                        src="{{ vich_uploader_asset(article, 'product_image')|imagine_filter('my_thumb', runtimeConfig) }}" 
+                        alt="{{ article.imageName }}" 
+                        class="thumbnail"
+                    />
 			</span>
 			{{ article.content }}
 		</div>
