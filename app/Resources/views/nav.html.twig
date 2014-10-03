@@ -107,8 +107,8 @@
                                         </a>
                                     </h6>
                                 </div><hr>
-                                <p>{{ 'user.show.my_posts'|trans }}: <a href='#'> {{ app.user.postCount }}</a></p>
-                                <p>{{ 'user.show.my_comments'|trans }}: <a href='#'> {{ app.user.commentsCount }}</a></p>
+                                <p>{{ 'user.show.my_posts'|trans }}: <a href='{{ path('user_posts') }}' class='pull-right'> {{ app.user.postCount }}</a></p>
+                                <p>{{ 'user.show.my_comments'|trans }}: <a href='{{ path('user_comments') }}' class='pull-right'> {{ app.user.commentsCount }}</a></p>
                             </div>
                         </div>
                     </div>

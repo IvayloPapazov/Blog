@@ -12,6 +12,7 @@ use Blog\PostBundle\Entity\Post;
 use Blog\CommentsBundle\Entity\Comment;
 use Blog\PostBundle\Form\PostType;
 use Blog\PostBundle\Entity\PostRepository;
+use Blog\CommentsBundle\Entity\CommentRepository;
 use Blog\CommentsBundle\Form\CommentsType;
 
 /**
@@ -95,7 +96,7 @@ class PostController extends Controller
             $em = $this->getDoctrine()->getManager();
 
             $post->setUser($this->getUser());
-            $em->persist($post);    
+            $em->persist($post);
             $em->flush();
 
             return $this->redirect($this->generateUrl('show_posts'));
@@ -112,7 +113,9 @@ class PostController extends Controller
     public function tagListAction($page, $tagId)
     {
         $em = $this->get('doctrine.orm.entity_manager');
-        $posts = $em->getRepository('BlogPostBundle:Post')->findAllByTag($tagId);
+        $posts = $em
+            ->getRepository('BlogPostBundle:Post')
+            ->findAllByTag($tagId);
 
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
@@ -124,5 +127,41 @@ class PostController extends Controller
         );
 
         return array('pagination' => $pagination);
+    }
+
+    /**
+     * @Route("/user/list/{page}", name="user_posts", defaults={"page" = 1})
+     * @Method({"GET"})
+     * @Template()
+     */
+    public function userPostListAction($page)
+    {
+        // var_dump($this->getUser());
+        // exit;
+        $em = $this->get('doctrine.orm.entity_manager');
+        $posts = $em
+            ->getRepository('BlogPostBundle:Post')
+            ->findByUser($this->getUser()->getId());
+
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $posts,
+            $this->get('request')->query->get(
+                'page',
+                $page
+            )
+        );
+
+        return array('pagination' => $pagination);
+    }
+
+    /**
+     * @Route("/user/comments/list/{page}", name="user_comments", defaults={"page" = 1})
+     * @Method({"GET"})
+     * @Template()
+     */
+    public function userCommentsListAction($page)
+    {
+       
     }
 }
