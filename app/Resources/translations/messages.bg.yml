@@ -52,20 +52,23 @@ user:
             label:
                 username: Име
                 password: Парола
-                email: Email
+                email: Поща
                 firstName: Име
                 lastName: Фамилиея
             placeholder:
                 username: Име
                 password: Парола
-                email: Email
+                email: Поща
             button:
                 save: Запазване
+    show:
+        my_post: Моите постове
+        my_comments: Моите коментари
 
 profile:
     show:
         username: Име
-        email: Email
+        email: Поща
         edit: Промяна
 
 security:
