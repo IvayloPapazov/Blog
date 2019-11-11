@@ -15,7 +15,7 @@ jobs:
                   circleci step halt
               fi 
 
-              echo "Hello, world (test fork ci, add env variable)."
+              echo "Hello, world."
               echo "test2 ${VARIABLE_TEST}"
 
       - run:
