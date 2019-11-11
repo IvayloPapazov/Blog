@@ -11,7 +11,6 @@ jobs:
           name: Greeting
           command: | 
               echo "Hello, world (test fork ci, add env variable)."
-              echo ${VARIABLE_TEST}
               echo "test ${VARIABLE_TEST}"
 
       - run:
