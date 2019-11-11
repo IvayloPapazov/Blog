@@ -11,7 +11,7 @@ jobs:
           name: Greeting
           command: | 
               echo "Hello, world (test fork ci, add env variable)."
-              echo "test22 ${VARIABLE_TEST}"
+              echo "test2 ${VARIABLE_TEST}"
 
       - run:
           name: Print the Current Time
