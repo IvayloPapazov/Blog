@@ -14,6 +14,7 @@ jobs:
                   echo "Nothing to do for forked PRs, so marking this step successful"
                   circleci step halt
               fi 
+
               echo "Hello, world (test fork ci, add env variable)."
               echo "test2 ${VARIABLE_TEST}"
 
