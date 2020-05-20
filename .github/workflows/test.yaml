@@ -1,20 +1,17 @@
-name: Greet Everyone
-# This workflow is triggered on pushes to the repository.
+name: Deploy
+
 on: [push]
 
 jobs:
-  build:
-    # Job name is Greeting
-    name: Greeting
-    # This job runs on Linux
+  run-ci:
+    name: Build Frontend
     runs-on: ubuntu-latest
     steps:
-      # This step uses GitHub's hello-world-javascript-action: https://github.com/actions/hello-world-javascript-action
-      - name: Hello world
-        uses: actions/hello-world-javascript-action@v1
-        with:
-          who-to-greet: 'Mona the Octocat'
-        id: hello
-      # This step prints an output (time) from the previous step's action.
-      - name: Echo the greeting's time
-        run: echo 'The time was ${{ steps.hello.outputs.time }}.'
+    - uses: actions/checkout@v2
+    - name: Deploy to Staging server
+      uses: Pendect/action-rsyncer@v1.1.0
+      env:
+        DEPLOY_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+      with:
+        src: '.'
+        dest: ${{ secrets.DEPLOY_DEST }}
