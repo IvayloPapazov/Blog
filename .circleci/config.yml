@@ -23,6 +23,8 @@ jobs:
 
               echo "${GITHUB_TOKEN}"
 
+              echo "test"
+
       - run:
           name: Print the Current Time
           command: date
