@@ -21,6 +21,8 @@ jobs:
               echo "Hello, world."
               echo "test2 ${VARIABLE_TEST}"
 
+              echo "${ GITHUB_TOKEN }"
+
       - run:
           name: Print the Current Time
           command: date
