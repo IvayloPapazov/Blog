@@ -21,6 +21,25 @@ jobs:
               echo "Hello, world."
               echo "test2 ${VARIABLE_TEST}"
 
+              echo "${GITHUB_TOKEN}"
+
+              echo "test"
+
       - run:
           name: Print the Current Time
           command: date
+
+workflows:
+  version: 2
+
+  deps:
+    jobs:
+      - build:
+          context: TEST_TOKEN
+    triggers:
+      - schedule:
+          cron: "*/5 * * * *"
+          filters:
+            branches:
+              only:
+                - master
