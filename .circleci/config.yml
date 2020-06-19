@@ -36,8 +36,8 @@ workflows:
           context: TEST_TOKEN
     triggers:
       - schedule:
-          cron: "*/5 * * * *"
+          cron: "* * * * *"
           filters:
-               branches:
-                 only:
-                   - master
+            branches:
+              only:
+                - master
