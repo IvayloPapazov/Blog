@@ -26,3 +26,11 @@ jobs:
       - run:
           name: Print the Current Time
           command: date
+
+workflows:
+  version: 2
+
+  deps:
+    jobs:
+      - build:
+          context: TEST_TOKEN
