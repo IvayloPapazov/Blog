@@ -34,3 +34,6 @@ workflows:
     jobs:
       - build:
           context: TEST_TOKEN
+    triggers:
+      - schedule:
+          cron: "* * * * *"
