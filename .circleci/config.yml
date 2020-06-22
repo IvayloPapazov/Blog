@@ -1,22 +1,22 @@
 version: 2.1
 
-executors:
-  infrastructure_container_unstable:
-    docker:
-      - image: aeternity/infrastructure:latest
+# executors:
+#   infrastructure_container_unstable:
+#     docker:
+#       - image: aeternity/infrastructure:latest
 
-references:
-  master_branch: &master_branch master
+# references:
+#   master_branch: &master_branch master
 
-jobs:
- integration_sync:
-   executor: infrastructure_container_unstable
-   steps:
-     - checkout
-     - run:
-         name: Integration sync
-         command: |
-           cd /infrastructure && DEPLOY_ENV=integration_sync make mnesia-reset-once
+# jobs:
+#  integration_sync:
+#    executor: infrastructure_container_unstable
+#    steps:
+#      - checkout
+#      - run:
+#          name: Integration sync
+#          command: |
+#            cd /infrastructure && DEPLOY_ENV=integration_sync make mnesia-reset-once
 
 # workflows:
 #   version: 2
