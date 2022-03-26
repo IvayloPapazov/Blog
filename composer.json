@@ -24,7 +24,7 @@
         "symfony/translation": "2.*",
         "symfony/yaml": "2.*",
         "knplabs/knp-paginator-bundle": "~2.4",
-        "phpunit/phpunit": "4.2.6",
+        "phpunit/phpunit": "4.8.36",
         "doctrine/doctrine-fixtures-bundle": "2.2.*",
         "breerly/factory-girl-php": "dev-master",
         "matthiasnoback/symfony-dependency-injection-test": "dev-master",
